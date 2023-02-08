@@ -1,0 +1,459 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+    outline: none;
+}
+
+:root {
+    --box-shadow: 0px 6px 19px 1px #06041d4a;
+    --text-shadow-big: 9px 8px 2px rgba(0,0,0,0.1);
+    --text-shadow-small: 2px 2px 20px rgba(0,0,0,0.4);
+    --border-wide-main: 3px solid var(--main-color);
+    --border-thin-main: 1px solid var(--main-color);
+    --border-wide-white: 3px solid var(--white-color);
+    --border-wide-white: 1px solid var(--white-color);
+
+    /*====================*/
+    /*====== COLORS ======*/
+    /*====================*/
+
+    --main-color: #2696BD;
+    --main-color-dark: #1b6984;
+    --main-color-light: #7dc0d7;
+    --main-color-trans: rgba(38, 150, 189,0.4);
+    --text-color: #707070;
+    --dark-bg: #383848;
+    --white-bg: #f9fafb; 
+    --white-color: #ffffff;
+    --white-alt: #e6e6e6;
+
+    /*===================*/
+    /*====== FONTS ======*/
+    /*===================*/
+
+    --body-font: 'Raleway', sans-serif;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    overflow-x: hidden;
+    background: var(--white-bg);
+}
+
+img {
+    vertical-align: middle;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none; 
+    color: var(--white-color);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,li,span,label {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+table.table {
+    white-space: nowrap;
+}
+
+section {
+    background: var(--white-color);
+    padding: 5vw 0vw 0vw 0vw;
+    width: 100vw;
+    min-height: 98vh;
+}
+
+/*===================*/
+/*======= NAV =======*/
+/*===================*/
+
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    box-shadow: var(--box-shadow);
+    z-index: 999;
+}
+
+nav .nav-container {
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    margin-inline: auto;
+}
+
+nav .logo-image {
+    width: 170px; 
+}   
+
+nav .logo-image img {
+    width: 100%;
+}
+
+nav ul li {
+    margin-inline: 25px;
+}
+
+nav .nav-item {
+    justify-content: center;
+}
+
+nav .nav-link {
+    font-weight: var(--font-medium); 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: var(--h2-font-size);
+    line-height: 1.3;
+    width: 140px;
+    text-shadow: var(--text-shadow-big);
+}
+
+nav .nav-link::after {
+    border-bottom: var(--border-wide-main);
+    content: "";
+    height: 3px;
+    width: 0;
+    margin: auto;
+    display: block;
+}
+
+nav .nav-link:hover {
+    font-weight: var(--font-semi-bold);
+    letter-spacing: 1px;
+    text-align: center;    
+    transition: 1000ms ease;
+}
+
+nav .nav-link:hover::after {
+    width: 100%;
+    transition: width 0.3s linear;
+}
+
+nav .nav-link.active::after {
+    width: 100%;
+}
+
+/*===============*/
+/*==== MAIN =====*/
+/*== CONTAINER ==*/
+/*===============*/
+
+#main-container {
+    width: 100%;
+    background-size: cover;
+    padding: 1vw 3vw;
+    min-height: 80vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background: rgba(38, 150, 189,0.14)
+}
+
+#main-container .contents {
+    display: flex;
+    width: 98%;
+    flex-direction: row;
+    gap: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-container .contents .logo-image {
+    width: 500px;
+}
+
+#main-container .contents .logo-image img {
+    width: 100%;
+}
+
+#main-container .contents .description p.parrafo {
+    text-align: justify;
+    color: #666;
+}
+
+#main-container .contents .description p.parrafo:not(first-child) {
+    margin-top: 20px;
+}
+
+#main-container .contents .school-image img {
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+}
+
+footer {
+    padding: 4vw 3vw 1vw;
+    background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    box-shadow: inset 0px 7px 3px -3px rgba(50, 50, 50, 0.30) inset;
+}
+
+footer .footer-col {
+    padding-bottom: 10px;
+    width: 20%;
+}
+
+footer h2 {
+    font-weight: 600;
+    padding-bottom: 20px;
+    font-size: 19px;
+    text-transform:uppercase;
+    letter-spacing: 2.4px;
+    color: var(--main-color-light);
+    text-align:center;
+    border-bottom: 3px solid var(--main-color-light);
+}
+
+footer li {
+    list-style: none;
+    color: var(--white-color);
+    font-weight: 500;
+    padding: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+footer li:hover {
+    letter-spacing: .2px;
+}
+
+footer li strong {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+footer .social-icons{   
+    display: flex;
+    flex-direction: inline;
+    justify-content: center;
+    gap: 29px;
+    margin-top: 45px;
+}
+
+footer .social-icons img {
+    width: 45px;
+    transition: 500ms ease;
+}
+
+footer .social-icons img:hover {
+    width: 48px;
+}
+
+#main-container .oferta {
+    width: 30%;
+}
+
+#main-container .oferta-image {
+    width: 98%;
+    margin: auto;
+}
+
+#main-container .oferta-image img {
+    width: 100%;
+}
+
+#main-container .label {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: var(--main-color);
+}
+
+#main-container .label h2 {
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+#main-container .text {
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 1.3px;
+    margin-top: 17px;
+}
+/*============================*/
+/*====== MEDIA QUERIES =======*/
+/*==== MEDIUM SIZE SCREEN ====*/
+/*======= SMARTPHONES ========*/
+/*============================*/
+
+@media screen and (max-width: 767px) {
+    #main-container {
+        padding: 20vw 3vw;
+    }
+
+    #main-container .contents {
+        flex-direction: column;
+    }
+
+    #main-container .contents .logo-image {
+        width: 250px;
+    }
+
+    #main-container .description {
+        margin-top: 40px;
+    }
+
+    #main-container .contents .description p.parrafo {
+        text-align: center;
+    }
+
+    #main-container .contents .school-image {
+        margin-top: 55px;
+        width: 100%;
+    }
+
+    #main-container .contents .school-image img {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .footer-col {
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    footer .footer-col h2 {
+        font-size: 30px;
+    }
+
+    footer .footer-col li {
+        font-size: 20px;
+    }
+
+    footer .footer-col:last-child {
+        width: 60%;
+    }
+
+    nav .nav-container button {
+        position: absolute;
+        right: 20px;
+    }
+
+    nav .nav-link {
+        text-align: start;
+        width: 90%;
+        font-size: 25px;
+    }
+
+    nav .nav-link:hover {
+        text-align: start;
+    }
+
+    #main-container .contents {
+        border:none;
+    }
+
+    #main-container .oferta {
+        width: 90%;
+    }
+
+    #main-container .label h2 {
+        font-size: 37px;
+        letter-spacing: 0;
+    }
+
+    #main-container .text {
+        margin-bottom: 120px;
+    }
+}
+
+/*============================*/
+/*====== MEDIA QUERIES =======*/
+/*==== MEDIUM SIZE SCREEN ====*/
+/*========= TABLETS ==========*/ 
+/*============================*/
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    nav ul li {
+        margin-inline: 0;
+    }
+    
+    nav li {
+        font-size: 14px;
+    }
+
+    #main-container .contents .logo-image img {
+        width: 50%;
+    }
+
+    #main-container .description {
+        width: 100%;
+    }
+
+    #main-container {
+        height: fit-content;
+        align-items:flex-start;
+    }
+
+    #main-container .contents {
+        display: grid;
+        grid-template-columns: 40% auto;
+        gap: 3%;
+        margin-top: 10%;
+        margin-bottom: 20%; 
+    }
+
+    #main-container .contents .school-image {
+        display: flex;
+        margin-left: 50%;
+        margin-top: 20%;
+    }
+
+    #main-container .oferta {
+        width: 100%;
+    }
+
+    footer .footer-col {
+        width: 40%;
+        margin-top: 20px;
+    }
+}
